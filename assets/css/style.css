@@ -682,3 +682,14 @@ ul { list-style: none; }
   .footer-grid { grid-template-columns: 1fr; }
   .case-gallery { grid-template-columns: 1fr 1fr; }
 }
+
+/* 导航商标图片样式（替换原文字 Logo） */
+.brand-logo-img {
+  height: 52px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+@media (max-width: 640px) {
+  .brand-logo-img { height: 44px; }
+}
