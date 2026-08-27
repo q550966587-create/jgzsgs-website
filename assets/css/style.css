@@ -95,18 +95,15 @@ ul { list-style: none; }
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
-  transition: box-shadow 0.3s ease;
-}
-.header.scrolled { box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
-.nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 74px;
+  height: 60px;
+  padding: 0 28px;
+  background: #ffffff;
+  transition: box-shadow 0.3s ease;
 }
+.header.scrolled { box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
 .brand { display: flex; align-items: center; gap: 12px; }
 .brand-logo {
   width: 44px; height: 44px;
@@ -119,23 +116,26 @@ ul { list-style: none; }
 .brand-text b { font-size: 20px; color: var(--dark); display: block; letter-spacing: 2px; }
 .brand-text span { font-size: 12px; color: var(--text-light); letter-spacing: 3px; }
 
-.nav-links { display: flex; align-items: center; gap: 8px; }
+.nav-links { display: flex; align-items: center; gap: 6px; }
 .nav-links a {
-  padding: 10px 18px;
-  border-radius: 999px;
+  padding: 0 16px;
   font-size: 15px;
   font-weight: 500;
-  color: var(--text);
-  transition: all 0.25s ease;
+  line-height: 60px;
+  color: #333333;
+  letter-spacing: 1px;
+  transition: color 0.25s ease;
 }
-.nav-links a:hover, .nav-links a.active { background: var(--primary-light); color: var(--primary); }
+.nav-links a:hover { color: var(--accent); }
+.nav-links a.active { color: var(--accent); font-weight: 700; }
 
 .nav-contact { display: flex; align-items: center; gap: 10px; margin-left: 12px; }
 .nav-contact .phone {
-  font-size: 15px; font-weight: 700; color: var(--accent);
+  font-size: 15px; font-weight: 600; color: #000000;
+  line-height: 1.25;
   white-space: nowrap;
 }
-.nav-contact .phone small { display: block; font-weight: 400; font-size: 11px; color: var(--text-light); }
+.nav-contact .phone small { display: block; font-weight: 400; font-size: 11px; color: #666666; letter-spacing: 1px; }
 
 .nav-toggle {
   display: none;
@@ -153,7 +153,7 @@ ul { list-style: none; }
 
 /* ---------- Hero 轮播 ---------- */
 .hero {
-  margin-top: 74px;
+  margin-top: 60px;
   position: relative;
   height: 640px;
   overflow: hidden;
@@ -395,7 +395,7 @@ ul { list-style: none; }
 
 /* ---------- 页面 Banner ---------- */
 .page-hero {
-  margin-top: 74px;
+  margin-top: 60px;
   position: relative;
   padding: 120px 0;
   background-size: cover;
@@ -645,7 +645,7 @@ ul { list-style: none; }
   .nav-toggle { display: flex; }
   .nav-links {
     position: fixed;
-    top: 74px; left: 0; right: 0;
+    top: 60px; left: 0; right: 0;
     background: #fff;
     flex-direction: column;
     padding: 20px 24px;
@@ -688,11 +688,18 @@ ul { list-style: none; }
 
 /* 导航商标图片样式（替换原文字 Logo） */
 .brand-logo-img {
-  height: 52px;
+  height: 44px;
   width: auto;
   display: block;
   object-fit: contain;
 }
+/* 页脚商标牌：白底圆角，比导航略大 */
+.footer-brand .brand-logo-img {
+  height: 56px;
+  width: auto;
+  border-radius: 8px;
+  background: #ffffff;
+}
 @media (max-width: 640px) {
-  .brand-logo-img { height: 44px; }
+  .brand-logo-img { height: 38px; }
 }
